@@ -9,6 +9,10 @@ class ApiError(Exception):
 
         self.message = data.get('message')
         self.code = data.get('error')
+   
+   
+    def __str__(self):
+        return repr("ERROR %i : %s " % (self.code, self.message))
 
 
 class ApiResponse(object):
